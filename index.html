@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+
+      <title>ReactJS Props</title>
+      <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+      <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      <link rel="stylesheet" href="./CSS/dinhdang.css"/>
+      </head>
+      <div id = "root"></div>
+      <script type="text/babel">
+         function Header(props){
+            console.log(props);
+            return(
+               <div className="header">
+               <img src={props.image}
+               alt={props.title}/>
+                 <p className="post-title">{props.description}</p>
+                 <p className="post-public">{props.title}</p>
+                  </div>
+            )
+         }
+         function App(){
+            console.log(<Header title="title test"/>)
+            return(
+               <div id="wrapper">
+                  <Header
+                  image="https://cdn.fullstack.edu.vn/f8-learning/courses/2.png"
+                  description="New Hitt"
+                  title="Học C++"
+                  />
+                  <Header
+                  image="https://cdn.fullstack.edu.vn/f8-learning/courses/2.png"
+                  description="1 New Hitt"
+                  title="1 Học C++"
+                  />
+                  <Header
+                  image="https://cdn.fullstack.edu.vn/f8-learning/courses/2.png"
+                  description="2 New Hitt"
+                  title="2 Học C++"
+                  />
+               </div>
+               )  
+            }
+         ReactDOM.render(<App/>,document.getElementById("root"))
+         </script>
+   </body>
+</html>
